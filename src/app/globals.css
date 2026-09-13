@@ -1,0 +1,119 @@
+@import "tailwindcss";
+
+:root {
+  --background: #faf7f0;
+  --foreground: #1c2621;
+  --card: #ffffff;
+  --card-foreground: #1c2621;
+  --border: #e4ddc9;
+  --muted-foreground: #6b7268;
+
+  --primary: #0f6d4c;
+  --primary-hover: #0b5a3e;
+  --primary-foreground: #ffffff;
+
+  --accent: #c9971c;
+  --accent-foreground: #1c2621;
+
+  --danger: #b3261e;
+
+  /* Jewel-tone answer-tile palette (Kahoot/Blooket-style color-blocked
+     tiles, on-brand instead of generic red/blue/yellow/green) — see the
+     visual redesign discussion in chat. */
+  --tile-1: #0f6d4c; /* emerald */
+  --tile-1-foreground: #ffffff;
+  --tile-2: #1d5fa8; /* sapphire */
+  --tile-2-foreground: #ffffff;
+  --tile-3: #c9971c; /* gold */
+  --tile-3-foreground: #1c2621;
+  --tile-4: #a83246; /* ruby */
+  --tile-4-foreground: #ffffff;
+}
+
+@theme inline {
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+  --color-card: var(--card);
+  --color-card-foreground: var(--card-foreground);
+  --color-border: var(--border);
+  --color-muted-foreground: var(--muted-foreground);
+  --color-primary: var(--primary);
+  --color-primary-hover: var(--primary-hover);
+  --color-primary-foreground: var(--primary-foreground);
+  --color-accent: var(--accent);
+  --color-accent-foreground: var(--accent-foreground);
+  --color-danger: var(--danger);
+  --color-tile-1: var(--tile-1);
+  --color-tile-1-foreground: var(--tile-1-foreground);
+  --color-tile-2: var(--tile-2);
+  --color-tile-2-foreground: var(--tile-2-foreground);
+  --color-tile-3: var(--tile-3);
+  --color-tile-3-foreground: var(--tile-3-foreground);
+  --color-tile-4: var(--tile-4);
+  --color-tile-4-foreground: var(--tile-4-foreground);
+  --font-sans: var(--font-geist-sans);
+  --font-mono: var(--font-geist-mono);
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --background: #0e1512;
+    --foreground: #edf2ef;
+    --card: #16201b;
+    --card-foreground: #edf2ef;
+    --border: #26332c;
+    --muted-foreground: #9aa69e;
+
+    --primary: #23a878;
+    --primary-hover: #2ec28e;
+    --primary-foreground: #06120d;
+
+    --accent: #e0b23a;
+    --accent-foreground: #1c1200;
+
+    --danger: #e5695f;
+
+    --tile-1: #1e8f66;
+    --tile-1-foreground: #06120d;
+    --tile-2: #3e7fca;
+    --tile-2-foreground: #06120d;
+    --tile-3: #e0b23a;
+    --tile-3-foreground: #1c1200;
+    --tile-4: #c94a5f;
+    --tile-4-foreground: #ffffff;
+  }
+}
+
+body {
+  background: var(--background);
+  color: var(--foreground);
+  font-family: var(--font-sans), Arial, Helvetica, sans-serif;
+}
+
+@keyframes bounce-in {
+  0% {
+    opacity: 0;
+    transform: scale(0.85) translateY(8px);
+  }
+  60% {
+    opacity: 1;
+    transform: scale(1.03) translateY(0);
+  }
+  100% {
+    transform: scale(1) translateY(0);
+  }
+}
+.animate-bounce-in {
+  animation: bounce-in 0.4s cubic-bezier(0.34, 1.56, 0.64, 1) both;
+}
+
+@keyframes confetti-fall {
+  0% {
+    transform: translateY(-10vh) rotate(0deg);
+    opacity: 1;
+  }
+  100% {
+    transform: translateY(110vh) rotate(540deg);
+    opacity: 0.9;
+  }
+}
